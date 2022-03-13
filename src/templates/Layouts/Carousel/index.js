@@ -1,7 +1,9 @@
 import React, { useEffect } from "react";
-import { Carousel } from "antd";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import { useSelector, useDispatch } from "react-redux";
-
+import "../Carousel/carousel.css";
 import { getCarouselAction } from "../../../redux/actions/CarouselActions";
 
 export default function HomeCarousel(props) {
@@ -10,21 +12,34 @@ export default function HomeCarousel(props) {
   useEffect(() => {
     dispatch(getCarouselAction);
   }, []);
-
+  const settings = {
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    dots: false,
+    arrows: false,
+  };
   const renderImgBanner = () => {
     return arrBanner.map((item, index) => {
       return (
-        <div key={index}>
+        <div className="w-full">
           <img
             className="w-full"
-            style={{ height: "400px", objectFit: "cover" }}
+            key={index}
+            style={{ height: "600px", objectFit: "cover" }}
             src={item.hinhAnh}
-            alt={item.hinhAnh}
           />
         </div>
       );
     });
   };
 
-  return <Carousel autoplay="true">{renderImgBanner()}</Carousel>;
+  return (
+    <div>
+      <Slider autoplay="true" {...settings}>
+        {renderImgBanner()}
+      </Slider>
+    </div>
+  );
 }

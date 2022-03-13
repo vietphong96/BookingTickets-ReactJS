@@ -1,0 +1,28 @@
+.Thuong {
+  width: 30px;
+  height: 30px;
+  background-color: aqua;
+  border-radius: 5px;
+}
+
+.Vip {
+  width: 30px;
+  height: 30px;
+  background-color: brown;
+  border-radius: 5px;
+}
+
+.daDat {
+  cursor: no-drop;
+  opacity: 0.7;
+}
+.dangDat {
+  background-color: greenyellow;
+}
+
+.gheDaDuocDat {
+  background-color: rgb(248, 248, 1);
+  box-shadow: -1px 2px 18px -6px #0000;
+  -webkit-box-shadow: -1px 2px 18px -6px #0000;
+  color: black !important;
+}

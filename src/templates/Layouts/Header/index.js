@@ -22,7 +22,7 @@ function Header() {
               activeClassName="border-b-2 border-indigo-500"
               rel="noopener noreferrer"
               to="/home"
-              className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent dark:text-violet-400 dark:border-violet-400"
+              className="flex items-center px-4 -mb-1 border-b-2 "
             >
               Home
             </NavLink>
@@ -32,7 +32,7 @@ function Header() {
               activeClassName="border-b-2 border-indigo-500"
               rel="noopener noreferrer"
               to="/contact"
-              className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent"
+              className="flex items-center px-4 -mb-1 border-b-2 "
             >
               Contact
             </NavLink>
@@ -42,15 +42,17 @@ function Header() {
               activeClassName="border-b-2 border-indigo-500"
               rel="noopener noreferrer"
               to="/news"
-              className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent"
+              className="flex items-center px-4 -mb-1 border-b-2 "
             >
               News
             </NavLink>
           </li>
         </ul>
         <div className="items-center flex-shrink-0 hidden lg:flex">
-          <button className="self-center px-8 py-3 rounded">Sign in</button>
-          <button className="self-center px-8 py-3 font-semibold rounded dark:bg-violet-400 dark:text-coolGray-900">
+          <NavLink to="/login" className="self-center px-8 py-3 rounded">
+            Sign in
+          </NavLink>
+          <button className="self-center px-8 py-3 font-semibold rounded">
             Sign up
           </button>
         </div>

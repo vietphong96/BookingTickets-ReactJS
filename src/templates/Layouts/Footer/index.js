@@ -1,131 +1,42 @@
 import React from "react";
-
+import _ from "lodash";
+import { useSelector } from "react-redux";
 function Footer() {
+  const { heThongRapChieu } = useSelector(
+    (state) => state.QuanLyRapChieuReducer
+  );
+
+  const arrHeThongRap = _.map(heThongRapChieu, (heThongRap) =>
+    _.pick(heThongRap, ["maHeThongRap", "tenHeThongRap", "logo"])
+  );
+  console.log("pick", arrHeThongRap);
   return (
-    <footer className="py-6 bg-opacity-5 bg-black">
-      <div className="container px-6 mx-auto space-y-6 divide-y divide-coolGray-400 md:space-y-12 divide-opacity-50 ">
-        <div className="grid grid-cols-12">
-          <div className="pb-6 col-span-full md:pb-0 md:col-span-6">
-            <a
-              rel="noopener noreferrer"
-              href="#"
-              className="flex justify-center space-x-3 md:justify-start"
-            >
-              <div className="flex items-center justify-center w-12 h-12 rounded-full dark:bg-violet-400">
+    <footer className="bg-opacity-5 bg-black">
+      <div className="container px-6 mx-auto space-y-6 divide-y divide-coolGray-400 md:space-y-12 divide-opacity-50">
+        <div
+          style={{
+            margin: "auto",
+            width: "40%",
+          }}
+          className="flex justify-between items-center"
+        >
+          {arrHeThongRap.map((logoRapChieu, index) => {
+            return (
+              <div
+                style={{
+                  width: "30px",
+                  height: "30px",
+                }}
+              >
                 <img
-                  className="w-32"
-                  src={require("../../../assets/img/Logo/logo.png")}
+                  style={{ width: "100%", marginTop: "20px" }}
+                  src={logoRapChieu.logo}
                 />
               </div>
-              <span className="self-center text-2xl font-semibold  text-black">
-                Brand name
-              </span>
-            </a>
-          </div>
-          <div className="col-span-6 text-center md:text-left md:col-span-3">
-            <p className="pb-1 text-lg font-medium">Category</p>
-            <ul>
-              <li>
-                <a
-                  rel="noopener noreferrer"
-                  href="#"
-                  className="hover:dark:text-violet-400"
-                >
-                  Link
-                </a>
-              </li>
-              <li>
-                <a
-                  rel="noopener noreferrer"
-                  href="#"
-                  className="hover:dark:text-violet-400"
-                >
-                  Link
-                </a>
-              </li>
-              <li>
-                <a
-                  rel="noopener noreferrer"
-                  href="#"
-                  className="hover:dark:text-violet-400"
-                >
-                  Link
-                </a>
-              </li>
-              <li>
-                <a
-                  rel="noopener noreferrer"
-                  href="#"
-                  className="hover:dark:text-violet-400"
-                >
-                  Link
-                </a>
-              </li>
-              <li>
-                <a
-                  rel="noopener noreferrer"
-                  href="#"
-                  className="hover:dark:text-violet-400"
-                >
-                  Link
-                </a>
-              </li>
-              {/**/}
-            </ul>
-          </div>
-          <div className="col-span-6 text-center md:text-left md:col-span-3">
-            <p className="pb-1 text-lg font-medium">Category</p>
-            <ul>
-              <li>
-                <a
-                  rel="noopener noreferrer"
-                  href="#"
-                  className="hover:dark:text-violet-400"
-                >
-                  Link
-                </a>
-              </li>
-              <li>
-                <a
-                  rel="noopener noreferrer"
-                  href="#"
-                  className="hover:dark:text-violet-400"
-                >
-                  Link
-                </a>
-              </li>
-              <li>
-                <a
-                  rel="noopener noreferrer"
-                  href="#"
-                  className="hover:dark:text-violet-400"
-                >
-                  Link
-                </a>
-              </li>
-              <li>
-                <a
-                  rel="noopener noreferrer"
-                  href="#"
-                  className="hover:dark:text-violet-400"
-                >
-                  Link
-                </a>
-              </li>
-              <li>
-                <a
-                  rel="noopener noreferrer"
-                  href="#"
-                  className="hover:dark:text-violet-400"
-                >
-                  Link
-                </a>
-              </li>
-              {/**/}
-            </ul>
-          </div>
+            );
+          })}
         </div>
-        <div className="grid justify-center pt-6 lg:justify-between">
+        <div className="grid justify-center lg:justify-between">
           <div className="flex flex-col self-center text-sm text-center md:block lg:col-start-1 md:space-x-6">
             <span>©2022 All rights reserved</span>
             <a rel="noopener noreferrer" href="#">

@@ -1,0 +1,2 @@
+export const SET_HE_THONG_RAP = "SET_HE_THONG_RAP";
+export const LAY_THONG_TIN_PHIM = "LAY_THONG_TIN_PHIM";

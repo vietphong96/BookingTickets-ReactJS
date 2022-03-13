@@ -1,27 +1,27 @@
-import { Carousel } from "antd";
 import { Fragment } from "react";
+import { Redirect } from "react-router-dom";
 import { Route } from "react-router-dom";
-import HomeCarousel from "../Layouts/Carousel";
-import Footer from "../Layouts/Footer";
-import Header from "../Layouts/Header";
+import { USER_LOGIN } from "../../utils/settings/config";
 
-export const HomeTemPlate = (props) => {
+const CheckOutTemPlate = (props) => {
   const { Component, ...restProps } = props;
+
+  if (!localStorage.getItem(USER_LOGIN)) {
+    return <Redirect to="/login" />;
+  }
+
   return (
     <Route
       {...restProps}
       render={(propsRoute) => {
         return (
           <Fragment>
-            <Header />
-
             <Component {...propsRoute} />
-            <br />
-            <hr />
-            <Footer />
           </Fragment>
         );
       }}
     />
   );
 };
+
+export default CheckOutTemPlate;
