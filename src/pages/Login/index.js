@@ -3,6 +3,7 @@ import * as Yup from "yup";
 import { useFormik } from "formik";
 import { useDispatch, useSelector } from "react-redux";
 import { dangNhapAction } from "../../redux/actions/QuanLyNguoiDungAction";
+import { NavLink } from "react-router-dom";
 function Login() {
   const dispatch = useDispatch();
 
@@ -17,10 +18,7 @@ function Login() {
     validationSchema: Yup.object({
       taiKhoan: Yup.string()
         .required("Required")
-        .matches(
-          /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/,
-          "Please enter a valid email address"
-        ),
+        .matches(/[0-9a-zA-Z]{6,10}/, "Please enter a valid"),
       matKhau: Yup.string()
         .required("Required")
         .matches(
@@ -69,7 +67,7 @@ function Login() {
             </svg>
           </div>
           <div className="text-2xl text-indigo-800 tracking-wide ml-2 font-semibold">
-            blockify
+            <NavLink to="/home">Netflix</NavLink>
           </div>
         </div>
       </div>
@@ -78,21 +76,21 @@ function Login() {
           className="text-center text-4xl text-indigo-900 font-display font-semibold lg:text-left xl:text-5xl
 xl:text-bold"
         >
-          Log in
+          Đăng Nhập
         </h2>
         <div className="mt-12">
           <form onSubmit={formik.handleSubmit}>
             <div>
               <div className="text-sm font-bold text-gray-700 tracking-wide">
-                Email Address
+                Tài Khoản
               </div>
               <input
                 className="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500"
-                type="email"
+                type="text"
                 name="taiKhoan"
                 value={formik.values.taiKhoan}
                 onChange={formik.handleChange}
-                placeholder="mike@gmail.com"
+                placeholder="mike123"
               />
               {formik.errors.taiKhoan && (
                 <p className="errorMsg text-red-600">
@@ -104,14 +102,14 @@ xl:text-bold"
             <div className="mt-8">
               <div className="flex justify-between items-center">
                 <div className="text-sm font-bold text-gray-700 tracking-wide">
-                  Password
+                  Mật Khẩu
                 </div>
                 <div>
                   <a
                     className="text-xs font-display font-semibold text-indigo-600 hover:text-indigo-800
                     cursor-pointer"
                   >
-                    Forgot Password?
+                    Quên mật khẩu?
                   </a>
                 </div>
               </div>
@@ -141,9 +139,9 @@ xl:text-bold"
             </div>
           </form>
           <div className="mt-12 text-sm font-display font-semibold text-gray-700 text-center">
-            Don't have an account ?{" "}
+            Bạn chưa có tài khoản ?{" "}
             <a className="cursor-pointer text-indigo-600 hover:text-indigo-800">
-              Sign up
+              <NavLink to="/register"> Đăng Ký</NavLink>
             </a>
           </div>
         </div>

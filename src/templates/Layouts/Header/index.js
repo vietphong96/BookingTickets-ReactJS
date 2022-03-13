@@ -1,7 +1,63 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-
+import { history } from "../../../App";
+import { TOKEN, USER_LOGIN } from "../../../utils/settings/config";
 function Header() {
+  const renderUserLogin = () => {
+    const user = JSON.parse(localStorage.getItem(USER_LOGIN));
+    if (user) {
+      return (
+        <div className="flex items-center">
+          <div>
+            {" "}
+            <img
+              style={{
+                width: "40px",
+                height: "40px",
+                borderRadius: "100%",
+                marginRight: "5px",
+              }}
+              src="https://i.pravatar.cc/300"
+            />
+          </div>
+          <div> {user.taiKhoan}</div>
+          <button
+            onClick={() => {
+              localStorage.removeItem(USER_LOGIN);
+              localStorage.removeItem(TOKEN);
+              history.push("./home");
+              window.location.reload();
+            }}
+            className="self-center px-8 py-3 font-semibold rounded"
+          >
+            Đăng xuất
+          </button>
+        </div>
+      );
+    }
+    return (
+      <div>
+        <button
+          onClick={() => {
+            history.push("/login");
+          }}
+          to="/login"
+          className="self-center px-8 py-3 rounded"
+        >
+          Sign in
+        </button>
+        <button
+          onClick={() => {
+            history.push("/register");
+          }}
+          className="self-center px-8 py-3 font-semibold rounded"
+        >
+          Register
+        </button>
+      </div>
+    );
+  };
+
   return (
     <header className="p-4 dark:bg-coolGray-800 dark:text-coolGray-100 bg-opacity-40 bg-black text-white fixed w-full z-10">
       <div className="container flex justify-between h-16 mx-auto">
@@ -49,12 +105,7 @@ function Header() {
           </li>
         </ul>
         <div className="items-center flex-shrink-0 hidden lg:flex">
-          <NavLink to="/login" className="self-center px-8 py-3 rounded">
-            Sign in
-          </NavLink>
-          <button className="self-center px-8 py-3 font-semibold rounded">
-            Sign up
-          </button>
+          {renderUserLogin()}
         </div>
         <button className="p-4 lg:hidden">
           <svg

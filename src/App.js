@@ -12,11 +12,9 @@ import Register from "./pages/Register";
 import { HomeTemPlate } from "./templates/HomeTemplate/HomeTemPlate";
 import { UserTemPlate } from "./templates/UserTemplate";
 import CheckOutTemPlate from "./templates/CheckOutTemplate/CheckOutTemlate";
+import Loading from "./pages/Loading";
 
 export const history = createBrowserHistory();
-const CheckOutTemPlateLazy = lazy(() =>
-  import("./templates/CheckOutTemplate/CheckOutTemlate")
-);
 
 export default function App() {
   return (
@@ -27,7 +25,7 @@ export default function App() {
         <HomeTemPlate path="/contact" exact Component={Contact} />
         <HomeTemPlate path="/detail/:id" exact Component={Detail} />
         <UserTemPlate path="/login" exact Component={Login} />
-        <Route path="/register" exact component={Register} />
+        <UserTemPlate path="/register" exact Component={Register} />
         <HomeTemPlate path="/news" exact Component={News} />
         {/* <CheckOutTemPlate
           path="/detail/checkout/:id"
@@ -35,13 +33,11 @@ export default function App() {
           Component={CheckOut}
         /> */}
 
-        <Suspense fallback={<h1>Loading...</h1>}>
-          <CheckOutTemPlateLazy
-            path="/checkout/:id"
-            exact
-            Component={CheckOut}
-          ></CheckOutTemPlateLazy>
-        </Suspense>
+        <HomeTemPlate
+          path="/checkout/:id"
+          exact
+          Component={CheckOut}
+        ></HomeTemPlate>
       </Switch>
     </Router>
   );

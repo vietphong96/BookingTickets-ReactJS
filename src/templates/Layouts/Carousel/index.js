@@ -17,7 +17,7 @@ export default function HomeCarousel(props) {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    dots: false,
+    dots: true,
     arrows: false,
   };
   const renderImgBanner = () => {

@@ -6,6 +6,8 @@ import { QuanLyRapChieuReducer } from "../redux/reducers/QuanLyRapChieuReducer";
 import { ThongTinPhimReducer } from "../redux/reducers/ThongTinPhimReducer";
 import { QuanLyDangNhapReducer } from "../redux/reducers/QuanLyDangNhapReducer";
 import { QuanLyDatVeReducer } from "../redux/reducers/QuanLyDatVeReducer";
+import { QuanLyTaiKhoanReducer } from "../redux/reducers/QuanLyTaiKhoanReducer";
+import { LoadingReducer } from "../redux/reducers/LoadingReducer";
 const rootReducer = combineReducers({
   CarouselReducer,
   QuanLyPhimReducer,
@@ -13,6 +15,8 @@ const rootReducer = combineReducers({
   ThongTinPhimReducer,
   QuanLyDangNhapReducer,
   QuanLyDatVeReducer,
+  QuanLyTaiKhoanReducer,
+  LoadingReducer,
 });
 
 export const store = createStore(rootReducer, applyMiddleware(thunk));

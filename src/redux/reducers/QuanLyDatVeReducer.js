@@ -1,8 +1,15 @@
-import { DAT_GHE, DAT_VE } from "../types/DatVe";
+import {
+  CHUYEN_TAB,
+  CHUYEN_TAB_HANDLE,
+  DAT_GHE,
+  DAT_VE,
+  HOAN_THANH_DAT_VE,
+} from "../types/DatVe";
 
 const stateDefault = {
   chiTietPhongVe: {},
   danhsachDatGhe: [],
+  tabDefault: "1",
 };
 
 export const QuanLyDatVeReducer = (state = stateDefault, action) => {
@@ -27,6 +34,19 @@ export const QuanLyDatVeReducer = (state = stateDefault, action) => {
       return { ...state };
     }
 
+    case HOAN_THANH_DAT_VE: {
+      state.danhsachDatGhe = [];
+      return { ...state };
+    }
+    case CHUYEN_TAB: {
+      state.tabDefault = "2";
+      return { ...state };
+    }
+
+    case CHUYEN_TAB_HANDLE: {
+      state.tabDefault = action.number;
+      return { ...state };
+    }
     default:
       return { ...state };
   }
