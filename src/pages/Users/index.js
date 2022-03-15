@@ -12,8 +12,7 @@ import {
   xoaPhimAction,
 } from "../../redux/actions/GetListFilmAction";
 import { NavLink } from "react-router-dom";
-import LayThongTinPhimAction from "../../redux/actions/LayThongTinPhimAction";
-import { Input, Space } from "antd";
+import { Input } from "antd";
 const { Search } = Input;
 
 export default function Admin() {

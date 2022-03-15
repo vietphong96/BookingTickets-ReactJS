@@ -1,7 +1,6 @@
-import { wait } from "@testing-library/user-event/dist/utils";
 import { quanLyDatVeService } from "../../services/QuanLyDatVeService";
 import { ThongTinDatVe } from "../../_core/models/ThongTinDatVe";
-import { CHUYEN_TAB, DAT_VE, HOAN_THANH_DAT_VE } from "../types/DatVe";
+import { DAT_VE, HOAN_THANH_DAT_VE } from "../types/DatVe";
 import { SHOW_LOADING, HIDE_LOADING } from "../types/Loadingtype";
 export const QuanLyDatVeAction = (maChieuPhim) => {
   return async (dispatch) => {
@@ -24,6 +23,7 @@ export const datVeAction = (thongTinDatVe = new ThongTinDatVe()) => {
         type: SHOW_LOADING,
       });
       const result = await quanLyDatVeService.datVe(thongTinDatVe);
+      console.log(result);
 
       await dispatch({
         type: HOAN_THANH_DAT_VE,

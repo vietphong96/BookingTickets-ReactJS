@@ -1,7 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Slider from "react-slick";
-import { GetListFilmAction } from "../../redux/actions/GetListFilmAction";
 import {
   PHIM_DANG_CHIEU,
   PHIM_SAP_CHIEU,
@@ -9,7 +8,6 @@ import {
 } from "../../redux/types/GetListFilm";
 import "../Button/Button.css";
 import CardFilm from "../CardFilm/CardFilm";
-import Film from "../Film";
 
 function MultipleRowRSlick() {
   const dispatch = useDispatch();

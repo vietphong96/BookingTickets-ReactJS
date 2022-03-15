@@ -1,19 +1,6 @@
 import React, { useState, useEffect } from "react";
 import moment from "moment";
-import { UploadOutlined } from "@ant-design/icons";
-import {
-  Form,
-  Input,
-  Button,
-  Radio,
-  Select,
-  Cascader,
-  DatePicker,
-  InputNumber,
-  TreeSelect,
-  Switch,
-  Upload,
-} from "antd";
+import { Form, Input, Radio, DatePicker, InputNumber, Switch } from "antd";
 import { useFormik } from "formik";
 import { GROUPID } from "../../utils/settings/config";
 import { useDispatch, useSelector } from "react-redux";

@@ -1,5 +1,5 @@
 import React from "react";
-import { Tabs, Radio, Space } from "antd";
+import { Tabs } from "antd";
 import { useState } from "react";
 import moment from "moment";
 import { NavLink } from "react-router-dom";
@@ -9,17 +9,15 @@ function HomeMenu(props) {
   const [tabPosition, setTabPosition] = useState("left");
   console.log("hethongrachieuHOmemeun", props.heThongRapChieu);
 
-  const changeTabPosition = (e) => {
-    setTabPosition(e.target.value);
-  };
-
   //render heThong
 
   const renderHeThongRap = () => {
     return props.heThongRapChieu?.map((Rap, index) => {
       return (
         <TabPane
-          tab={<img src={Rap.logo} className="rounded-full" width="50" />}
+          tab={
+            <img src={Rap.logo} className="rounded-full" width="50" alt="o" />
+          }
           key={index}
         >
           <Tabs tabPosition={tabPosition}>
@@ -51,6 +49,7 @@ function HomeMenu(props) {
                           style={{ display: "flex" }}
                         >
                           <img
+                            alt="pp"
                             style={{
                               width: "80px",
                               height: "80px",

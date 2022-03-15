@@ -20,7 +20,14 @@ function Detail(props) {
     return thongTinPhim.heThongRapChieu?.map((rap, index) => {
       return (
         <TabPane
-          tab={<img src={rap.logo} className="rounded-full" width="50" />}
+          tab={
+            <img
+              src={rap.logo}
+              className="rounded-full"
+              width="50"
+              alt="rap.logo"
+            />
+          }
           key={index}
         >
           <div>
@@ -31,6 +38,7 @@ function Detail(props) {
                     <img
                       style={{ width: "80px", height: "80px" }}
                       src={rapChieu.hinhAnh}
+                      alt="aaa"
                     />
                   </div>
                   <div
@@ -96,6 +104,7 @@ function Detail(props) {
             <img
               style={{ width: "300px", height: "400px", borderRadius: "25px" }}
               src={thongTinPhim.hinhAnh}
+              alt="hinhanh"
             />
           </div>
           {/* thong tin */}

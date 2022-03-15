@@ -1,15 +1,7 @@
-import { Component, Fragment } from "react";
 import { Route } from "react-router-dom";
 import { useState } from "react";
 import { Layout, Menu } from "antd";
-import {
-  MenuUnfoldOutlined,
-  MenuFoldOutlined,
-  UserOutlined,
-  VideoCameraOutlined,
-  BarChartOutlined,
-  HomeOutlined,
-} from "@ant-design/icons";
+import { UserOutlined } from "@ant-design/icons";
 import React from "react";
 import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
 import { TOKEN, USER_LOGIN } from "../../utils/settings/config";
@@ -17,16 +9,10 @@ import { history } from "../../App";
 import { Redirect } from "react-router-dom";
 import Loading from "../../pages/Loading";
 import { useSelector } from "react-redux";
-const { Header, Content, Footer, Sider } = Layout;
+const { Header, Content, Sider } = Layout;
 const { SubMenu } = Menu;
 export const AdminTemPlate = (props) => {
   const [collapsed, setCollapsed] = useState(false);
-  const state = {
-    collapsed: false,
-  };
-  const toggle = () => {
-    setCollapsed(!collapsed);
-  };
   const { isLoanding } = useSelector((state) => state.LoadingReducer);
   const { Component, ...restProps } = props;
   const user = JSON.parse(localStorage.getItem(USER_LOGIN));

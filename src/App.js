@@ -1,7 +1,5 @@
 import { createBrowserHistory } from "history";
 import { Router, Switch, Route } from "react-router-dom";
-import { Suspense, lazy } from "react";
-import CardFilm from "./components/CardFilm/CardFilm";
 import CheckOut from "./pages/CheckOut/CheckOut";
 import Contact from "./pages/Contact";
 import Detail from "./pages/Details";
@@ -11,15 +9,12 @@ import News from "./pages/News";
 import Register from "./pages/Register";
 import { HomeTemPlate } from "./templates/HomeTemplate/HomeTemPlate";
 import { UserTemPlate } from "./templates/UserTemplate";
-import CheckOutTemPlate from "./templates/CheckOutTemplate/CheckOutTemlate";
-import Loading from "./pages/Loading";
 import { AdminTemPlate } from "./templates/AdminTemPlate/AdminTemplate";
 import User from "./pages/Users";
 import Dashboard from "./pages/Dashboard";
 import Films from "./pages/Films";
 import Addnew from "./pages/Films/Addnew";
 import Edit from "./pages/Films/Edit";
-import ModalVideoComponent from "./components/Modalvideo";
 
 export const history = createBrowserHistory();
 

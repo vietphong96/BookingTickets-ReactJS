@@ -1,25 +1,10 @@
 import React, { useState } from "react";
 import moment from "moment";
-import { UploadOutlined } from "@ant-design/icons";
-import {
-  Form,
-  Input,
-  Button,
-  Radio,
-  Select,
-  Cascader,
-  DatePicker,
-  InputNumber,
-  TreeSelect,
-  Switch,
-  Upload,
-} from "antd";
+import { Form, Input, Radio, DatePicker, InputNumber, Switch } from "antd";
 import { useFormik } from "formik";
-import { reduceRight, values } from "lodash";
 import { GROUPID } from "../../utils/settings/config";
 import { useDispatch } from "react-redux";
 import { themPhimUploadHinhAction } from "../../redux/actions/GetListFilmAction";
-import Loading from "../Loading";
 const FormSizeDemo = () => {
   const [componentSize, setComponentSize] = useState("default");
   const onFormLayoutChange = ({ size }) => {
