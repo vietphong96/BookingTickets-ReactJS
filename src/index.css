@@ -4,3 +4,18 @@
 * {
   font-family: "Oswald", sans-serif;
 }
+
+.modal-video-movie-wrap {
+  padding-bottom: 0 !important;
+}
+.ant-modal-footer {
+  display: none !important;
+}
+.ant-modal-close-x {
+  display: none !important;
+}
+
+.modal-video-inner {
+  width: 0 !important;
+  height: auto;
+}

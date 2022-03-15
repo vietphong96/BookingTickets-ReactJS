@@ -19,11 +19,13 @@ import Dashboard from "./pages/Dashboard";
 import Films from "./pages/Films";
 import Addnew from "./pages/Films/Addnew";
 import Edit from "./pages/Films/Edit";
+import ModalVideoComponent from "./components/Modalvideo";
 
 export const history = createBrowserHistory();
 
 export default function App() {
   return (
+    // <ModalVideoComponent />
     <Router history={history}>
       <Switch>
         <HomeTemPlate path="/" exact Component={Home} />

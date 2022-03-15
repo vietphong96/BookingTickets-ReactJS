@@ -1,9 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import "./styleCard.css";
 import { FaPlayCircle, FaStore } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
+import ModalVideoComponent from "../Modalvideo";
+import { Modal, Button } from "antd";
 
 function CardFilm(props) {
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
+  const showModal = () => {
+    setIsModalVisible(true);
+  };
+
+  const handleOk = () => {
+    setIsModalVisible(false);
+  };
+
   const { film } = props;
   return (
     <div
@@ -45,20 +57,35 @@ function CardFilm(props) {
                 zIndex: "3",
               }}
             >
-              <button
+              <Button
                 style={{
                   position: "absolute",
                   zIndex: "9999",
-                  fontSize: "60px",
-                  top: "50%",
+                  backgroundColor: "rgba(0,0,0,0.7)",
+                  top: "45%",
+                  border: "none",
                   left: "50%",
                   transform: "translate(-50%,-50%)",
-                  width: "50px",
-                  height: "50px",
                 }}
+                type="primary"
+                onClick={showModal}
               >
-                <FaPlayCircle />
-              </button>
+                <FaPlayCircle style={{ fontSize: "60px" }} />
+              </Button>
+              <Modal
+                title={film.tenPhim}
+                visible={isModalVisible}
+                onOk={handleOk}
+              >
+                <ModalVideoComponent idFilm={film.trailer.slice(-11)} />
+                <Button
+                  style={{ marginLeft: "85%" }}
+                  onClick={handleOk}
+                  className="btn btn-success mt-5"
+                >
+                  Close
+                </Button>
+              </Modal>
             </div>
           </div>
         </div>

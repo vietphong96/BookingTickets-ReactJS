@@ -9,6 +9,7 @@ import HomeCarousel from "../../templates/Layouts/Carousel";
 function Home(props) {
   const dispatch = useDispatch();
   const { arrFilm } = useSelector((state) => state.QuanLyPhimReducer);
+  console.log("arrFilm", arrFilm);
   const { heThongRapChieu } = useSelector(
     (state) => state.QuanLyRapChieuReducer
   );
