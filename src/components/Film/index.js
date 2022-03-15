@@ -30,7 +30,7 @@ function Film(props) {
           )}
         </p>
         <a className="text-indigo-500 inline-flex items-center">
-          Booking Ticket
+          Đặt vé
           <svg
             className="w-4 h-4 ml-2"
             viewBox="0 0 24 24"

@@ -188,7 +188,10 @@ function CheckOut(props) {
             {toTalCost().toLocaleString()} VND
           </div>
           <hr />
-          <div className="text-green-700 text-lg">{thongTinPhim?.tenPhim}</div>
+          <div className="text-green-700 text-lg">
+            {" "}
+            TÊN PHIM:{thongTinPhim?.tenPhim}
+          </div>
           <div>
             <span className="text-red-900">Địa điểm:</span>{" "}
             {thongTinPhim?.tenCumRap}

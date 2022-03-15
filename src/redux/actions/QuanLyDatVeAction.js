@@ -33,9 +33,10 @@ export const datVeAction = (thongTinDatVe = new ThongTinDatVe()) => {
         type: HIDE_LOADING,
       });
 
-      await dispatch({
-        type: CHUYEN_TAB,
-      });
+      // await dispatch({
+      //   type: CHUYEN_TAB,
+      // });
+      window.location.reload();
     } catch (err) {
       console.log("err");
       dispatch({

@@ -13,6 +13,12 @@ import { HomeTemPlate } from "./templates/HomeTemplate/HomeTemPlate";
 import { UserTemPlate } from "./templates/UserTemplate";
 import CheckOutTemPlate from "./templates/CheckOutTemplate/CheckOutTemlate";
 import Loading from "./pages/Loading";
+import { AdminTemPlate } from "./templates/AdminTemPlate/AdminTemplate";
+import User from "./pages/Users";
+import Dashboard from "./pages/Dashboard";
+import Films from "./pages/Films";
+import Addnew from "./pages/Films/Addnew";
+import Edit from "./pages/Films/Edit";
 
 export const history = createBrowserHistory();
 
@@ -33,11 +39,17 @@ export default function App() {
           Component={CheckOut}
         /> */}
 
-        <HomeTemPlate
-          path="/checkout/:id"
-          exact
-          Component={CheckOut}
-        ></HomeTemPlate>
+        <HomeTemPlate path="/checkout/:id" exact Component={CheckOut} />
+
+        {/* ADmin */}
+
+        <AdminTemPlate path="/admin" exact Component={User} />
+        <AdminTemPlate path="/admin/user" exact Component={User} />
+        <AdminTemPlate path="/admin/dashboard" exact Component={Dashboard} />
+        <AdminTemPlate path="/admin/films" exact Component={Films} />
+        <AdminTemPlate path="/admin/films/addnew" exact Component={Addnew} />
+        <AdminTemPlate path="/admin/films/edit/:id" exact Component={Edit} />
+        <Route path="*" exact component={Home} />
       </Switch>
     </Router>
   );

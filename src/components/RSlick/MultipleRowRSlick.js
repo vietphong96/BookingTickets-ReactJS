@@ -22,7 +22,7 @@ function MultipleRowRSlick() {
   const activeTongHop = tongHop ? "active_button" : "non_active_button";
 
   const renderFilm = () => {
-    return arrFilm.slice(0, 12).map((film, index) => {
+    return arrFilm.map((film, index) => {
       return <CardFilm film={film} key={index} />;
     });
   };

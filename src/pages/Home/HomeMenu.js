@@ -74,7 +74,7 @@ function HomeMenu(props) {
                                 .map((lichChieu, index) => {
                                   return (
                                     <NavLink
-                                      to="/checkout/3424dd"
+                                      to={`checkout/${lichChieu.maLichChieu}`}
                                       className="mr-3  text-sm text-teal-700"
                                     >
                                       {moment(

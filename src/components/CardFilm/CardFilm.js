@@ -75,7 +75,7 @@ function CardFilm(props) {
         }}
       >
         <FaStore />
-        <NavLink to={`/detail/${film.maPhim}`}>Booking Tickets</NavLink>
+        <NavLink to={`/detail/${film.maPhim}`}>ĐẶT VÉ</NavLink>
       </button>
     </div>
   );

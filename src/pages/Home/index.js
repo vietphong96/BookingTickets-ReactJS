@@ -3,7 +3,7 @@ import HomeMenu from "./HomeMenu";
 import { useSelector, useDispatch } from "react-redux";
 import Film from "../../components/Film";
 import MultipleRows from "../../components/RSlick/MultipleRowRSlick";
-import { GetListFilmAction } from "../../redux/actions/GetListFilmAction";
+import { layDanhSachPhimAction } from "../../redux/actions/GetListFilmAction";
 import heThongRapAction from "../../redux/actions/heThongRapAction";
 import HomeCarousel from "../../templates/Layouts/Carousel";
 function Home(props) {
@@ -14,7 +14,7 @@ function Home(props) {
   );
 
   useEffect(() => {
-    dispatch(GetListFilmAction);
+    dispatch(layDanhSachPhimAction());
     dispatch(heThongRapAction());
   }, []);
 
